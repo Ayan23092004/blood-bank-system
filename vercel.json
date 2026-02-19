@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "Bloodbank_Managment_System/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "Bloodbank_Managment_System/wsgi.py"
+    }
+  ]
+}
