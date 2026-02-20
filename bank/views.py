@@ -8,7 +8,10 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import Group
 from account.models import CustomUser
 from bank.models import Blood
+from django.http import HttpResponse
 
+def home(request):
+    return HttpResponse("Blood Bank Management System")
 # Create your views here.
 def pending_request_patient(request):
     history = BloodRequest.objects.filter(progress = 'Pending').order_by('-id')
