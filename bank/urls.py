@@ -1,7 +1,10 @@
 from django.urls import path
 from bank.views import *
-
+from django.contrib import admin
+from django.urls import path
+from bank import views
 urlpatterns = [
+path('admin/', admin.site.urls),
     path('pending_request/', pending_request_patient, name="pending_request_patient"),
     path('pending_request_aprroved/<str:created>/', approved_request_patient, name="approved_request_patient"),
     path('pending_request_reject/<str:created>/', reject_request_patient, name="reject_request_patient"),
